@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Kartik Bhamare | Frontend Developer</title>
+<title>Kartik Sanjay Bhamare | Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -54,7 +54,6 @@ h2 {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  text-align: center;
   padding: 40px 20px;
   position: relative;
 }
@@ -75,21 +74,49 @@ h2 {
   to { transform: translateY(-50px); }
 }
 
+.hero-content {
+  text-align: center;
+  padding: 50px 40px;
+  max-width: 700px;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.3);
+  margin-bottom: 25px;
+  box-shadow: 0 0 40px rgba(99,102,241,0.4);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(34,211,238,0.6);
+}
+
 .hero h1 {
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: clamp(2.8rem, 6vw, 4rem);
   background: var(--accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero p {
-  margin: 20px 0 30px;
-  font-size: 1.25rem;
-  color: #cbd5f5;
+.hero-role {
+  font-size: 1.2rem;
+  color: #c7d2fe;
+  margin: 15px 0;
+}
+
+.hero-tags {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 30px;
 }
 
 .hero a {
-  padding: 16px 40px;
+  padding: 15px 38px;
   border-radius: 40px;
   background: var(--accent);
   color: #020617;
@@ -112,15 +139,14 @@ h2 {
 
 .about div { padding: 35px; }
 
-/* ===== EXPERIENCE ===== */
+/* ===== TIMELINE ===== */
 .timeline {
   display: grid;
   gap: 25px;
 }
 
 .timeline div {
-  padding: 25px;
-  position: relative;
+  padding: 30px;
 }
 
 .timeline h4 {
@@ -191,26 +217,10 @@ h2 {
   box-shadow: 0 30px 50px rgba(0,0,0,.4);
 }
 
-/* ===== TESTIMONIALS ===== */
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap: 25px;
-}
-
-.testimonial {
-  padding: 30px;
-  font-style: italic;
-}
-
 /* ===== CTA ===== */
 .cta {
   text-align: center;
   padding: 70px 30px;
-}
-
-.cta h2 {
-  margin-bottom: 20px;
 }
 
 .cta a {
@@ -240,9 +250,15 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
-  <div>
-    <h1>Kartik Bhamare</h1>
-    <p>Frontend Web Developer • Modern UI • JavaScript Enthusiast</p>
+  <div class="hero-content glass">
+    <img src="profile.jpg" alt="Kartik Bhamare" class="profile-img">
+
+    <h1>Kartik Sanjay Bhamare</h1>
+    <p class="hero-role">MCA Student • Frontend Developer • Tech Enthusiast</p>
+    <p class="hero-tags">
+      He/Him • Python • Java • DSA • Power BI • AI / ML
+    </p>
+
     <a href="#projects">View My Work</a>
   </div>
 </div>
@@ -252,34 +268,52 @@ footer {
 <h2>About Me</h2>
 <div class="about">
   <div class="glass">
-    I am a passionate <b>Frontend Developer</b> focused on crafting clean,
-    interactive, and modern web interfaces with strong UX principles.
+    <p>
+      I am <b>Kartik Sanjay Bhamare</b>, a dedicated and enthusiastic
+      technology learner with a strong academic foundation.
+      I have completed my <b>Bachelor's in Computer Science</b> with an
+      outstanding <b>9.00 CGPA</b> from
+      <b>K.V.N. Naik College, Nashik</b>.
+    </p>
+    <p style="margin-top:15px;">
+      Currently, I am pursuing my <b>Master of Computer Applications (MCA)</b>
+      at <b>K.K. Wagh Institute of Engineering, Nashik</b>.
+    </p>
   </div>
+
   <div class="glass">
-    <b>Focus Areas</b><br><br>
-    • Frontend Development<br>
-    • UI / UX Design<br>
-    • Responsive Layouts<br>
-    • JavaScript Projects
+    <p>
+      I am passionate about exploring new technologies and constantly
+      improving my skills. With a strong interest in
+      <b>software development</b> and <b>problem-solving</b>, I aim to
+      contribute meaningfully to the tech industry while growing
+      professionally.
+    </p>
+    <p style="margin-top:15px;">
+      <b>Current Focus:</b><br>
+      • Python Programming<br>
+      • Java & Data Structures<br>
+      • Power BI & Data Analysis<br>
+      • AI / Machine Learning
+    </p>
   </div>
 </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- EDUCATION -->
 <section>
-<h2>My Journey</h2>
+<h2>Education</h2>
 <div class="timeline">
   <div class="glass">
-    <h4>2023 – Started Web Development</h4>
-    Learned HTML, CSS & responsive design fundamentals.
+    <h4>Master of Computer Applications (MCA)</h4>
+    K.K. Wagh Institute of Engineering, Nashik<br>
+    <span class="muted">Currently Pursuing</span>
   </div>
+
   <div class="glass">
-    <h4>2024 – JavaScript & Projects</h4>
-    Built interactive JS projects and portfolios.
-  </div>
-  <div class="glass">
-    <h4>2025 – UI Focus</h4>
-    Specialized in modern UI, animations & performance.
+    <h4>Bachelor of Computer Science</h4>
+    K.V.N. Naik College, Nashik<br>
+    <span class="muted">CGPA: 9.00</span>
   </div>
 </div>
 </section>
@@ -290,15 +324,15 @@ footer {
 <div class="services">
   <div class="service glass">
     <h3>Frontend Development</h3>
-    Modern, clean & optimized websites.
+    Modern, responsive, and user-friendly websites.
   </div>
   <div class="service glass">
-    <h3>Responsive Design</h3>
-    Mobile-first layouts for all devices.
+    <h3>UI / UX Design</h3>
+    Clean layouts with smooth interactions.
   </div>
   <div class="service glass">
-    <h3>UI / UX</h3>
-    Smooth animations & user-friendly design.
+    <h3>Problem Solving</h3>
+    Logical and efficient coding solutions.
   </div>
 </div>
 </section>
@@ -310,7 +344,8 @@ footer {
   <div class="skill"><b>HTML</b><div class="bar"><span style="width:95%"></span></div></div>
   <div class="skill"><b>CSS</b><div class="bar"><span style="width:90%"></span></div></div>
   <div class="skill"><b>JavaScript</b><div class="bar"><span style="width:85%"></span></div></div>
-  <div class="skill"><b>Git & GitHub</b><div class="bar"><span style="width:80%"></span></div></div>
+  <div class="skill"><b>Python</b><div class="bar"><span style="width:80%"></span></div></div>
+  <div class="skill"><b>Java</b><div class="bar"><span style="width:75%"></span></div></div>
 </div>
 </section>
 
@@ -320,28 +355,15 @@ footer {
 <div class="projects">
   <div class="project glass">
     <h3>Portfolio Website</h3>
-    Modern personal portfolio with glass UI.
+    Modern personal portfolio using HTML & CSS.
   </div>
   <div class="project glass">
-    <h3>JavaScript Apps</h3>
-    Interactive mini-projects and experiments.
+    <h3>JavaScript Projects</h3>
+    Mini apps and interactive experiments.
   </div>
   <div class="project glass">
-    <h3>Responsive Designs</h3>
-    Mobile-first layouts using pure CSS.
-  </div>
-</div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section>
-<h2>Testimonials</h2>
-<div class="testimonials">
-  <div class="testimonial glass">
-    “Clean UI and great attention to detail.”
-  </div>
-  <div class="testimonial glass">
-    “Very strong frontend fundamentals.”
+    <h3>Responsive Web Designs</h3>
+    Mobile-first layouts with pure CSS.
   </div>
 </div>
 </section>
@@ -349,14 +371,14 @@ footer {
 <!-- CTA -->
 <section>
 <div class="cta glass">
-  <h2>Let’s Work Together</h2>
-  <p style="margin-bottom:25px;">Have a project or idea in mind?</p>
-  <a href="https://github.com/Bhamare04" target="_blank">Contact Me</a>
+  <h2>Let’s Connect</h2>
+  <p style="margin-bottom:25px;">Open to learning, collaboration & opportunities</p>
+  <a href="https://github.com/Bhamare04" target="_blank">Visit GitHub</a>
 </div>
 </section>
 
 <footer>
-© 2026 Kartik Bhamare • Frontend Developer
+© 2026 Kartik Sanjay Bhamare • MCA Student • Frontend Developer
 </footer>
 
 </body>
