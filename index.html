@@ -18,7 +18,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 html {
@@ -28,18 +28,6 @@ html {
 body {
   background: radial-gradient(circle at top, #0f172a, #020617);
   color: var(--text);
-  overflow-x: hidden;
-}
-
-/* ===== REVEAL ANIMATION ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease;
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* ===== HERO ===== */
@@ -69,10 +57,6 @@ body {
   to { transform: translateY(-40px); }
 }
 
-.hero-content {
-  max-width: 900px;
-}
-
 .hero h1 {
   font-size: clamp(2.5rem, 6vw, 4rem);
   background: var(--accent);
@@ -88,8 +72,7 @@ body {
 
 .hero a {
   display: inline-block;
-  padding: 14px 32px;
-  margin-top: 25px;
+  padding: 14px 34px;
   border-radius: 30px;
   background: var(--accent);
   color: #020617;
@@ -97,6 +80,7 @@ body {
   text-decoration: none;
   transition: transform .3s;
 }
+
 .hero a:hover {
   transform: scale(1.08);
 }
@@ -137,8 +121,8 @@ section h2 {
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
   justify-content: center;
+  gap: 25px;
 }
 
 .skill {
@@ -152,8 +136,8 @@ section h2 {
 
 .bar {
   height: 8px;
-  border-radius: 10px;
   background: rgba(255,255,255,0.15);
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -161,8 +145,6 @@ section h2 {
   display: block;
   height: 100%;
   background: var(--accent);
-  width: 0;
-  transition: width 1.5s ease;
 }
 
 /* ===== PROJECTS ===== */
@@ -175,7 +157,6 @@ section h2 {
 .project {
   padding: 25px;
   transition: transform .3s, box-shadow .3s;
-  position: relative;
 }
 
 .project:hover {
@@ -188,10 +169,6 @@ section h2 {
   background: var(--accent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.project small {
-  color: #94a3b8;
 }
 
 .project a {
@@ -221,31 +198,31 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-content reveal">
+  <div>
     <h1>Kartik Bhamare</h1>
-    <p>Frontend Web Developer • Modern UI • JavaScript Projects</p>
+    <p>Frontend Web Developer • Modern UI • JavaScript Enthusiast</p>
     <a href="#projects">View My Work</a>
   </div>
 </div>
 
 <!-- ABOUT -->
 <section>
-  <h2 class="reveal">About Me</h2>
+  <h2>About Me</h2>
   <div class="about">
-    <div class="glass reveal">
+    <div class="glass">
       <p>
-        I'm a passionate <b>Frontend Web Developer</b> who loves building
-        fast, responsive, and visually appealing web applications.
-        I focus on clean UI, smooth animations, and performance.
+        I am a passionate <b>Frontend Web Developer</b> who enjoys creating
+        modern, responsive, and visually appealing websites.
+        I focus on clean design and user-friendly experiences.
       </p>
     </div>
-    <div class="glass reveal">
+    <div class="glass">
       <p>
-        <b>What I bring:</b><br>
-        • Modern UI / UX mindset<br>
-        • JavaScript-focused development<br>
-        • Clean & scalable code<br>
-        • Strong GitHub workflow
+        <b>Focus Areas:</b><br>
+        • Frontend Development<br>
+        • Clean UI / UX Design<br>
+        • HTML, CSS & JavaScript<br>
+        • GitHub Projects
       </p>
     </div>
   </div>
@@ -253,8 +230,8 @@ footer {
 
 <!-- SKILLS -->
 <section>
-  <h2 class="reveal">Skills</h2>
-  <div class="skills reveal">
+  <h2>Skills</h2>
+  <div class="skills">
     <div class="skill"><b>HTML</b><div class="bar"><span style="width:95%"></span></div></div>
     <div class="skill"><b>CSS</b><div class="bar"><span style="width:90%"></span></div></div>
     <div class="skill"><b>JavaScript</b><div class="bar"><span style="width:85%"></span></div></div>
@@ -264,18 +241,36 @@ footer {
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2 class="reveal">Projects</h2>
-  <div class="projects" id="projectsContainer">
-    <p>Loading projects...</p>
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="project glass">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio built using HTML and CSS with modern UI.</p>
+      <a href="https://github.com/Bhamare04" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project glass">
+      <h3>JavaScript Projects</h3>
+      <p>Collection of small JavaScript-based projects and experiments.</p>
+      <a href="https://github.com/Bhamare04" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project glass">
+      <h3>Responsive Web Designs</h3>
+      <p>Mobile-first responsive layouts using pure HTML & CSS.</p>
+      <a href="https://github.com/Bhamare04" target="_blank">View on GitHub →</a>
+    </div>
+
   </div>
 </section>
 
 <!-- CONTACT -->
 <section>
-  <h2 class="reveal">Contact</h2>
-  <div class="glass reveal" style="padding:30px;text-align:center;">
+  <h2>Contact</h2>
+  <div class="glass" style="padding:30px;text-align:center;">
     <p>
-      GitHub:
+      GitHub:<br>
       <a href="https://github.com/Bhamare04" target="_blank">
         github.com/Bhamare04
       </a>
@@ -284,73 +279,8 @@ footer {
 </section>
 
 <footer>
-  © 2026 Kartik Bhamare • Built with HTML, CSS & JavaScript
+  © 2026 Kartik Bhamare • Built with HTML & CSS
 </footer>
-
-<script>
-<script>
-/* ===== SCROLL REVEAL ===== */
-function revealElements() {
-  document.querySelectorAll(".reveal").forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealElements);
-window.addEventListener("load", revealElements);
-
-/* ===== LOAD GITHUB PROJECTS ===== */
-const container = document.getElementById("projectsContainer");
-
-fetch("https://api.github.com/users/Bhamare04/repos")
-  .then(res => {
-    if (!res.ok) throw new Error("GitHub API limit exceeded");
-    return res.json();
-  })
-  .then(repos => {
-    container.innerHTML = "";
-
-    if (repos.length === 0) {
-      container.innerHTML = "<p>No public repositories found.</p>";
-      return;
-    }
-
-    repos
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .forEach(repo => {
-        const div = document.createElement("div");
-        div.className = "project glass reveal active"; // force visible
-        div.innerHTML = `
-          <h3>${repo.name}</h3>
-          <p>${repo.description || "No description available."}</p>
-          <small>⭐ ${repo.stargazers_count} • ${repo.language || "Code"}</small><br>
-          <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
-        `;
-        container.appendChild(div);
-      });
-  })
-  .catch(err => {
-    console.error(err);
-    container.innerHTML = `
-      <div class="glass" style="padding:20px;text-align:center;">
-        <p>
-          ⚠ Unable to load GitHub projects right now.<br>
-          Please visit my GitHub directly:
-          <br><br>
-          <a href="https://github.com/Bhamare04" target="_blank">
-            github.com/Bhamare04
-          </a>
-        </p>
-      </div>
-    `;
-  });
-</script>
-
-</script>
 
 </body>
 </html>
-
