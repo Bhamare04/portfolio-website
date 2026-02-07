@@ -288,41 +288,69 @@ footer {
 </footer>
 
 <script>
+<script>
 /* ===== SCROLL REVEAL ===== */
-const reveals = document.querySelectorAll(".reveal");
-const revealOnScroll = () => {
-  reveals.forEach(el => {
+function revealElements() {
+  document.querySelectorAll(".reveal").forEach(el => {
     const top = el.getBoundingClientRect().top;
     if (top < window.innerHeight - 100) {
       el.classList.add("active");
     }
   });
-};
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+}
+
+window.addEventListener("scroll", revealElements);
+window.addEventListener("load", revealElements);
 
 /* ===== LOAD GITHUB PROJECTS ===== */
-fetch("https://api.github.com/users/Bhamare04/repos")
-  .then(res => res.json())
-  .then(data => {
-    const container = document.getElementById("projectsContainer");
-    container.innerHTML = "";
-    data.sort((a,b) => b.stargazers_count - a.stargazers_count);
+const container = document.getElementById("projectsContainer");
 
-    data.forEach(repo => {
-      const div = document.createElement("div");
-      div.className = "project glass reveal";
-      div.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p>${repo.description || "No description available."}</p>
-        <small>⭐ ${repo.stargazers_count} • ${repo.language || "Code"}</small><br>
-        <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
-      `;
-      container.appendChild(div);
-    });
-    revealOnScroll();
+fetch("https://api.github.com/users/Bhamare04/repos")
+  .then(res => {
+    if (!res.ok) throw new Error("GitHub API limit exceeded");
+    return res.json();
+  })
+  .then(repos => {
+    container.innerHTML = "";
+
+    if (repos.length === 0) {
+      container.innerHTML = "<p>No public repositories found.</p>";
+      return;
+    }
+
+    repos
+      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .forEach(repo => {
+        const div = document.createElement("div");
+        div.className = "project glass reveal active"; // force visible
+        div.innerHTML = `
+          <h3>${repo.name}</h3>
+          <p>${repo.description || "No description available."}</p>
+          <small>⭐ ${repo.stargazers_count} • ${repo.language || "Code"}</small><br>
+          <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
+        `;
+        container.appendChild(div);
+      });
+  })
+  .catch(err => {
+    console.error(err);
+    container.innerHTML = `
+      <div class="glass" style="padding:20px;text-align:center;">
+        <p>
+          ⚠ Unable to load GitHub projects right now.<br>
+          Please visit my GitHub directly:
+          <br><br>
+          <a href="https://github.com/Bhamare04" target="_blank">
+            github.com/Bhamare04
+          </a>
+        </p>
+      </div>
+    `;
   });
+</script>
+
 </script>
 
 </body>
 </html>
+
